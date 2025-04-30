@@ -11,7 +11,7 @@ export interface CustomLambdaProps {
 }
 
 export class CustomLambda extends Construct {
-  readonly LambdaName: string;
+  readonly lambdaName: string;
   constructor(parent: Construct, name: string, props: CustomLambdaProps) {
     super(parent, name);
 
@@ -22,7 +22,7 @@ export class CustomLambda extends Construct {
       code: lambda.Code.fromAsset(props.codeDir),
     });
 
-    this.LambdaName = customlambda.functionName;
+    this.lambdaName = customlambda.functionName;
   }
 
 }
